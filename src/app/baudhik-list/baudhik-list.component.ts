@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs';
-import * as data from '../../data/baudhik.json';
 @Component({
   selector: 'app-baudhik-list',
   templateUrl: './baudhik-list.component.html',
@@ -22,7 +21,6 @@ baudhik:any = {
 
   }
  ngOnInit():void{
-  console.log(data)
    this.dataList = [
     {date:'08/05/2023',subject:'Udghatan Satr', category:'All', speaker:'Swamiji',geet:'', Amrutvachan:'', link:'' },
     {date:'09/05/2023',subject:'', category:'All', speaker:'Swamiji',geet:'', Amrutvachan:'', link:'' },
