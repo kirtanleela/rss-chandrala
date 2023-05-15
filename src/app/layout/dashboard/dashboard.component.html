@@ -1,0 +1,23 @@
+<!-- <app-ssv-list></app-ssv-list> -->
+<h3 class="text-center mt-5">Some instruction about sangh siksha varg</h3>
+<div class="center-div">
+<form>
+   <select name="" id="" (change)="selectedVarg(selectV)" name="selectV" [(ngModel)]="selectV" class="form-control">
+    <option value="">Select Varg </option>
+    <option value="p2023chandrala">Pratham Varsh 2023 - Chandrala</option>
+    <option value="p2023surat">Pratham Varsh 2023 - Surat</option>
+    <option value="p2023junagadh">Pratham Varsh 2023 - Junagadh</option>
+    <option value="d2023vadodara">Dwitiya Varsh 2023 - Vadodara</option>
+   </select>
+</form>
+</div>
+
+<main *ngIf="selectedMain">
+<div>Start Date - </div>
+<div>End Date : </div>
+<div> Place : </div>
+<div> Total Shiksharthi :</div>
+<div> Total Shikhshak: </div>
+<div>Prabandhak: </div>
+<div>Visitors till date: </div>
+</main>

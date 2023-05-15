@@ -1,0 +1,21 @@
+main div{
+    display: inline-block;
+    border:1px solid black;
+    border-radius: 20px;
+    padding:40px;
+    width:20%;
+    margin:2% 5%;;
+
+}
+main div:nth-child(even){
+    background-color:darkblue;
+    color:white;
+}
+main div:nth-child(odd){
+    background-color: purple;
+    color:white;
+}
+.center-div{
+    width:50%;
+    margin-left:20%;
+}
