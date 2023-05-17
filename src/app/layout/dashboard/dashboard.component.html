@@ -12,12 +12,18 @@
 </form>
 </div> -->
 
-<main>
-<div>Start Date - </div>
-<div>End Date : </div>
-<div> Place : </div>
-<div> Total Shiksharthi :</div>
-<div> Total Shikhshak: </div>
-<div>Prabandhak: </div>
-<div>Visitors till date: </div>
+<div style="height: 65px; padding: 34px; margin-left: 51px;">
+   <p-dropdown [options]="data" [(ngModel)]="selectedValue" placeholder="Select a Data" optionLabel="value"
+      [showClear]="true" (onChange)="dropdownChange($event)"></p-dropdown>
+</div>
+
+
+<main *ngIf="selectedValue?.value">
+   <div>Start Date - </div>
+   <div>End Date : </div>
+   <div> Place : </div>
+   <div> Total Shiksharthi :</div>
+   <div> Total Shikhshak: </div>
+   <div>Prabandhak: </div>
+   <div>Visitors till date: </div>
 </main>

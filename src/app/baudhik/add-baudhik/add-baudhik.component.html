@@ -1,73 +1,54 @@
-
-<button (click)="showBasicDialog()" icon="pi pi-external-link" class="btn btn-info btn-sm mt-40" label="Show">Add New</button>
+<button (click)="showBasicDialog()" icon="pi pi-external-link" class="btn btn-info btn-sm mt-40" label="Show">Add
+  New</button>
 <p-dialog header="Add New Record" [(visible)]="displayBasic" [style]="{width: '90vw'}" [baseZIndex]="10000">
-    <div class="addNew">
-        <form #baudhikForm="ngForm" >
-            <div class="row">
-            <div class="col-md-3">
-                <label for="date">Date</label>
-                <input id="date" 
-                   name="date"
-                   class="form-control"
-                   type="date"
-                  ngModel/>
-          </div>
-        
-          <div class="col-md-6">
-            <label for="subject">Subject</label>
-            <input id="subject"  
-                   class="form-control"
-                   name="subject" 
-                   type="text" 
-                   ngModel/>
-          </div>
-          <div class="col-md-3">
-            <label for="subject">Category</label>
-            <select  ngModel name="category" class="form-control">
-               <option value="vidhyarthi"> Vidhyarthi</option>  
-               <option value="vyvasayi"> Vyvsayi</option>  
-               <option value="vyvasyi"> College</option>  
-            </select>
-          
-          </div>
-          </div>
+  <div class="col-md-4">
+    <label for="selectedSsv">SSV</label>
+    <input id="selectedSsv" class="form-control" name="selectedSsv" type="text" [disabled]="true"
+      [(ngModel)]="selectedSsv" />
+  </div>
+  <div class="addNew">
+    <form #baudhikForm="ngForm">
       <div class="row">
-          <div class="col-md-3">
-            <label for="geet">Geet</label>
-            <input id="geet"  
-                   class="form-control"
-                   name="geet" 
-                   type="text" 
-                  ngModel />
-          </div>
-          <div class="col-md-6">
-            <label for="av">Amrutvachan</label>
-            <input id="av"  
-            class="form-control"
-                   name="amrutvachan" 
-                   type="text" 
-                  ngModel/>
-          </div>
-          <div class="col-md-3">
-            <label for="speaker">Speaker</label>
-            <input id="speaker"  
-            class="form-control"
-                   name="speaker" 
-                   type="text" 
-                  ngModel/>
-          </div>
-          </div>
-        <div class="row">
-            <div class="col-md-12">
-                <label for="link">Link</label>
-                <input id="link"  
-                class="form-control"
-                       name="link" 
-                       type="text" 
-                      ngModel/>
-              </div>
+        <div class="col-md-3">
+          <label for="date">Date</label>
+          <input id="date" name="date" class="form-control" type="date" ngModel />
         </div>
-        <!-- <div class="row">
+
+        <div class="col-md-6">
+          <label for="subject">Subject</label>
+          <input id="subject" class="form-control" name="subject" type="text" ngModel />
+        </div>
+        <div class="col-md-3">
+          <label for="subject">Category</label>
+          <select ngModel name="category" class="form-control">
+            <option value="vidhyarthi"> Vidhyarthi</option>
+            <option value="vyvasayi"> Vyvsayi</option>
+            <option value="vyvasyi"> College</option>
+          </select>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <label for="geet">Geet</label>
+          <input id="geet" class="form-control" name="geet" type="text" ngModel />
+        </div>
+        <div class="col-md-6">
+          <label for="av">Amrutvachan</label>
+          <input id="av" class="form-control" name="amrutvachan" type="text" ngModel />
+        </div>
+        <div class="col-md-3">
+          <label for="speaker">Speaker</label>
+          <input id="speaker" class="form-control" name="speaker" type="text" ngModel />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <label for="link">Link</label>
+          <input id="link" class="form-control" name="link" type="text" ngModel />
+        </div>
+      </div>
+      <!-- <div class="row">
             <div class="col-md-6">
           <button type="button" class="btn btn-success submit-btn" (click)="addRecord(baudhikForm)">Submit</button>
         </div>
@@ -75,12 +56,12 @@
             <button type="button" class="btn btn-danger submit-btn" (click)="">Cancel</button>
           </div>
     </div>  -->
-        </form>
-        </div>
-    <ng-template pTemplate="footer">
-        <button icon="pi pi-check" (click)="addRecord(baudhikForm)"  class="btn btn-success">Submit</button>
-        <button icon="pi pi-times" (click)="displayBasic=false" class="btn btn-danger" label="Cancel">Cancel</button>
-        <!-- <div class="row">
+    </form>
+  </div>
+  <ng-template pTemplate="footer">
+    <button icon="pi pi-check" (click)="addRecord(baudhikForm)" class="btn btn-success">Submit</button>
+    <button icon="pi pi-times" (click)="displayBasic=false" class="btn btn-danger" label="Cancel">Cancel</button>
+    <!-- <div class="row">
             <div class="col-md-6">
           <button type="button" class="btn btn-success submit-btn" (click)="addRecord(baudhikForm)">Submit</button>
         </div>
@@ -88,7 +69,7 @@
             <button type="button" class="btn btn-danger submit-btn" (click)="displayBasic=false">Cancel</button>
           </div>
     </div> -->
-        <!-- <p-button icon="pi pi-check" (click)="addRecord(baudhikForm)" label="Submit" styleClass="p-button-text btn-danger"></p-button>
+    <!-- <p-button icon="pi pi-check" (click)="addRecord(baudhikForm)" label="Submit" styleClass="p-button-text btn-danger"></p-button>
         <p-button icon="pi pi-times" (click)="displayBasic=false" label="Cancel"></p-button> -->
-    </ng-template>
+  </ng-template>
 </p-dialog>

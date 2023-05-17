@@ -1,11 +1,17 @@
-a:hover{
+a:hover {
   cursor: pointer;
 }
-.active{
-  color:white;
-  background-color:red;
+
+.active {
+  color: white;
+  background-color: red;
 }
-navbar{
+
+navbar {
   background-color: orange;
-  color:white;
+  color: white;
+}
+
+.nav-link {
+  color: white !important;
 }

@@ -1,0 +1,124 @@
+<!-- <div class="login-page">
+  <div class="login-box">
+    <div class="login-logo">
+      <a href="#"><b>RSS</b></a>
+    </div>
+    <div class="card">
+      <div class="card-body login-card-body">
+        <p class="login-box-msg">Sign in to start your session</p>
+
+        <form [formGroup]="loginForm">
+          <div class="input-group mb-3">
+            <input
+              formControlName="userName"
+              class="form-control"
+              placeholder="User Name"
+              (ngModel)="(userName)"
+            />
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-envelope"></span>
+              </div>
+            </div>
+            <span
+              class="error invalid-feedback"
+              style="display: inline;"
+              *ngIf="userNameRequiredError"
+              >Please Enter User Name</span
+            >
+          </div>
+          <div class="input-group mb-3">
+            <input
+              type="password"
+              formControlName="password"
+              class="form-control"
+              placeholder="Password"
+              required
+              name="password"
+              (ngModel)="(password)"
+            />
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-lock"></span>
+              </div>
+            </div>
+            <span
+              class="error invalid-feedback"
+              style="display: inline;"
+              *ngIf="passwordRequiredError"
+              >Please Enter Password</span
+            >
+          </div>
+          <div class="row">
+            <div class="col-8">
+              <div class="icheck-primary">
+                <input type="checkbox" id="remember" />
+                <label for="remember">
+                  Remember Me
+                </label>
+              </div>
+            </div>
+            <div class="col-4">
+              <button
+                type="button"
+                (click)="login()"
+                class="btn btn-primary btn-block"
+              >
+                Sign In
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <p class="mb-1">
+          <a href="forgot-password.html">Forgot password ?</a>
+        </p>
+        <p class="mb-0">
+          <a routerLink="/user/register" class="text-center">Register</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<app-loader></app-loader> -->
+
+<!-- As a heading -->
+<nav class="navbar navbar-light bg-faded">
+  <h1 class="navbar-brand mb-0">RSS</h1>
+</nav>
+<br>
+<div class="container">
+  <div class="card col-md-4">
+    <div class="card-block">
+      <h4 class="card-title">Login</h4>
+      <div>
+        <form [formGroup]="loginForm" novalidate>
+          <div class="form-group"
+            [class.has-danger]="loginForm.get('userName').hasError('required') && loginForm.get('userName').touched">
+            <label for="exampleInputEmail1">User Name</label>
+            <input formControlName="userName" type="text" class="form-control" id="userName"
+              [class.form-control-danger]="loginForm.get('userName').hasError('required') && loginForm.get('userName').touched"
+              placeholder="Enter email">
+            <div *ngIf="loginForm.get('userName').hasError('required') && loginForm.get('userName').touched"
+              class="form-control-feedback">UserName required</div>
+          </div>
+          <div class="form-group"
+            [class.has-danger]="(loginForm.get('password').hasError('required') || loginForm.get('password').hasError('minlength')) && loginForm.get('password').touched">
+            <label for="exampleInputPassword1">Password</label>
+            <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1"
+              [class.form-control-danger]="loginForm.get('password').hasError('required') && loginForm.get('password').touched"
+              placeholder="Password">
+
+            <div *ngIf="loginForm.get('password').hasError('required') && loginForm.get('password').touched"
+              class="form-control-feedback">Password required</div>
+
+            <div *ngIf="loginForm.get('password').hasError('minlength') && loginForm.get('password').touched"
+              class="form-control-feedback">Minimum length is 6 characters. Add more!</div>
+          </div>
+          <button type="button" (click)="login()" class="btn btn-primary">Submit</button>
+          <button type="button" class="btn">Clear </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

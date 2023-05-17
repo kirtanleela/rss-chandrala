@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { PrimeNGConfig } from 'primeng/api';
+import { DataCommunicationService } from 'src/app/shared/services/data-communication.service';
 
 @Component({
   selector: 'add-baudhik',
@@ -18,10 +19,16 @@ export class AddBaudhikComponent {
     av:''
   };
 
-  constructor(private primengConfig: PrimeNGConfig) {}
-  ngOnInit(){
+  selectedSsv: string = '';
 
+  constructor(private primengConfig: PrimeNGConfig, private dataCommunicationService: DataCommunicationService) {}
+  ngOnInit(){
     this.primengConfig.ripple = true;
+    this.dataCommunicationService.selectedSsv$.subscribe(data => {
+      if (data) {
+        this.selectedSsv = JSON.parse(data)?.value;
+      }
+    });
   }
   
    addRecord(rec:any){
