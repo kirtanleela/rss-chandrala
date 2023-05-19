@@ -1,16 +1,23 @@
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
 @keyframes example {
     0%   {background-image: url('./assets/Images/drHBG.jpg');}
     50%  {background-image: url('./assets/Images/msg.jpg');}
     100%  {background-image: url('./assets/Images/dhwaj.jpg');}
-
+ 
   }
   
   /* The element to apply the animation to */
   body {
     background-repeat: no-repeat;
-    background-size:50%;
-   background-color: orange;
+    background-position:bottom right;
+    background-size:25%;
+  //  background-color: orange;
     // animation-name: example;
-    animation-duration: 5s;
+    animation-duration: 25s;
     animation-iteration-count: infinite;
+    font-family: var(--font-family);
   }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

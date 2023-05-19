@@ -1,0 +1,114 @@
+<!-- <p-toolbar>
+    <div class="p-toolbar-group-start">
+        <p-button label="New" icon="pi pi-plus" class="mr-2"></p-button>
+        <p-button label="Upload" icon="pi pi-upload" styleClass="p-button-success"></p-button>
+        <i class="p-toolbar-separator pi pi-bars mr-2" style="vertical-align: middle"></i>
+        <p-splitButton label="Save" icon="pi pi-check" [model]="items" styleClass="p-button-warning"></p-splitButton>
+    </div>
+    <div class="p-toolbar-group-end">
+        <p-button icon="pi pi-search" class="mr-2"></p-button>
+        <p-button icon="pi pi-calendar" styleClass="p-button-success mr-2"></p-button>
+        <p-button icon="pi pi-times" styleClass="p-button-danger"></p-button>
+    </div>
+</p-toolbar> -->
+<add-baudhik (newRecordEvent)="addRecord($event)"></add-baudhik>
+<!-- <div class="addNew isVisible" *ngIf="isVisible">
+    <form #baudhikForm="ngForm" >
+        <div class="row">
+        <div class="col-md-3">
+            <label for="date">Date</label>
+            <input id="date" 
+               name="date"
+               class="form-control"
+               type="date"
+              ngModel/>
+      </div>
+    
+      <div class="col-md-6">
+        <label for="subject">Subject</label>
+        <input id="subject"  
+               class="form-control"
+               name="subject" 
+               type="text" 
+               ngModel/>
+      </div>
+      <div class="col-md-3">
+        <label for="subject">Category</label>
+        <select  ngModel name="category" class="form-control">
+           <option value="vidhyarthi"> Vidhyarthi</option>  
+           <option value="vyvasayi"> Vyvsayi</option>  
+           <option value="vyvasyi"> College</option>  
+        </select>
+      
+      </div>
+      </div>
+  <div class="row">
+      <div class="col-md-3">
+        <label for="geet">Geet</label>
+        <input id="geet"  
+               class="form-control"
+               name="geet" 
+               type="text" 
+              ngModel />
+      </div>
+      <div class="col-md-6">
+        <label for="av">Amrutvachan</label>
+        <input id="av"  
+        class="form-control"
+               name="amrutvachan" 
+               type="text" 
+              ngModel/>
+      </div>
+      <div class="col-md-3">
+        <label for="speaker">Speaker</label>
+        <input id="speaker"  
+        class="form-control"
+               name="speaker" 
+               type="text" 
+              ngModel/>
+      </div>
+      </div>
+    <div class="row">
+        <div class="col-md-12">
+            <label for="link">Link</label>
+            <input id="link"  
+            class="form-control"
+                   name="link" 
+                   type="text" 
+                  ngModel/>
+          </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+      <button type="button" class="btn btn-success submit-btn" (click)="addRecord(baudhikForm)">Submit</button>
+    </div>
+</div> 
+    </form>
+    </div> -->
+<div class="list-box">
+<!-- <button class="pull-right" (click)="isVisible=true">Add New</button> -->
+<table>
+    <tr>
+        <th>Index</th>
+        <th>Date</th>
+        <th>Subject</th>
+        <th>Geet</th>
+         <th>Amrutvachan</th>
+         <th>Category</th> 
+        <th>Speaker</th>
+        <th> Action </th>
+    </tr>
+    <tr *ngFor="let data of dataList; let i = index;"  >
+        <td>{{i + 1}}</td>
+        <td>{{data.date}}</td>
+        <td>{{data.subject}}</td>
+        <td>{{data.geet}}</td>
+        <td>{{data.amrutvachan}}</td>
+        <td>{{data.category}}</td>
+        <td>{{data.speaker}}</td>
+        <td><button (click)="showDetails(data)" class="btn btn-sm btn-info"> View </button>
+            <button class="btn btn-sm btn-danger"  (click)="deleteRecord(data)"> Delete </button></td>
+    </tr>
+</table>
+</div>
+
